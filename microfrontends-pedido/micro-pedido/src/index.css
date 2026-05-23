@@ -1,0 +1,22 @@
+.pedido-root {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  color: #111;
+}
+
+.pedido-list {
+  min-height: 150px;
+  border: 1px dashed #999;
+  background: #fafafa;
+  padding: 16px;
+  border-radius: 10px;
+}
+
+.pedido-item {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.pedido-item:last-child {
+  border-bottom: none;
+}
