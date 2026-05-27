@@ -1,32 +1,31 @@
-import React, { Suspense } from 'react';
-import './index.css';
+import React, { Suspense, useState } from "react";
 
-const Cardapio = React.lazy(() => import('cardapio/Cardapio'));
-const Pedido = React.lazy(() => import('pedido/Pedido'));
+const Cardapio = React.lazy(() => import("cardapio/Cardapio"));
+const Pedido = React.lazy(() => import("pedido/Pedido"));
 
 export default function App() {
+  const [showCardapio, setShowCardapio] = useState(true);
+  const [showPedido, setShowPedido] = useState(true);
+
   return (
-    <div className="app-container">
-      <header className="app-header">
-        <h1>Sistema de Pedidos</h1>
-        <p>Microfrontends com Module Federation</p>
-      </header>
+    <div className="container">
+      <h1 className="title">🍔 Sistema de Pedidos</h1>
 
-      <main className="app-grid">
-        <section className="app-panel">
-          <h2>Cardápio</h2>
-          <Suspense fallback={<p>Carregando cardápio...</p>}>
-            <Cardapio />
-          </Suspense>
-        </section>
+      <div className="actions">
+        <button onClick={() => setShowCardapio((value) => !value)}>
+          {showCardapio ? "Ocultar Cardápio" : "Mostrar Cardápio"}
+        </button>
+        <button onClick={() => setShowPedido((value) => !value)}>
+          {showPedido ? "Ocultar Pedido" : "Mostrar Pedido"}
+        </button>
+      </div>
 
-        <section className="app-panel">
-          <h2>Pedido</h2>
-          <Suspense fallback={<p>Carregando pedido...</p>}>
-            <Pedido />
-          </Suspense>
-        </section>
-      </main>
+      <div className="grid">
+        <Suspense fallback={<p>Carregando...</p>}>
+          {showCardapio && <Cardapio />}
+          {showPedido && <Pedido />}
+        </Suspense>
+      </div>
     </div>
   );
 }

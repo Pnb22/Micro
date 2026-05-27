@@ -1,28 +1,46 @@
-import React from 'react';
+import React from "react";
 
 const pratos = [
-  { id: 1, nome: 'Hambúrguer', descricao: 'Hambúrguer artesanal com queijo e bacon' },
-  { id: 2, nome: 'Pizza', descricao: 'Pizza de calabresa com borda crocante' },
-  { id: 3, nome: 'Salada', descricao: 'Salada fresca com molho de mostarda e mel' }
+  {
+    id: 1,
+    nome: "Hambúrguer Artesanal",
+    descricao: "Pão brioche, cheddar e bacon",
+  },
+  {
+    id: 2,
+    nome: "Pizza Calabresa",
+    descricao: "Molho especial e queijo mussarela",
+  },
+  {
+    id: 3,
+    nome: "Lasanha",
+    descricao: "Lasanha bolonhesa gratinada",
+  },
 ];
 
 export default function Cardapio() {
   const adicionarPedido = (prato) => {
-    window.dispatchEvent(new CustomEvent('adicionar-pedido', { detail: prato }));
+    window.dispatchEvent(
+      new CustomEvent("adicionar-pedido", {
+        detail: prato,
+      })
+    );
   };
 
   return (
-    <div className="cardapio-list">
+    <div className="card">
+      <h2 className="section-title">🍽️ Cardápio</h2>
+
       {pratos.map((prato) => (
-        <article key={prato.id} className="cardapio-item">
-          <div>
-            <h2>{prato.nome}</h2>
-            <p>{prato.descricao}</p>
-          </div>
-          <button type="button" onClick={() => adicionarPedido(prato)}>
+        <div className="item" key={prato.id}>
+          <h3>{prato.nome}</h3>
+
+          <p>{prato.descricao}</p>
+
+          <button onClick={() => adicionarPedido(prato)}>
             Adicionar ao pedido
           </button>
-        </article>
+        </div>
       ))}
     </div>
   );

@@ -11,6 +11,26 @@
   margin-bottom: 24px;
 }
 
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.actions button {
+  border: none;
+  background: #0070f3;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background: #0051b8;
+}
+
 .app-grid {
   display: grid;
   gap: 24px;

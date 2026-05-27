@@ -1,28 +1,39 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 export default function Pedido() {
   const [itens, setItens] = useState([]);
 
   useEffect(() => {
-    const handleAdicionarPedido = (event) => {
-      setItens((prevItens) => [...prevItens, event.detail]);
+    const evento = (e) => {
+      setItens((prev) => [...prev, e.detail]);
     };
 
-    window.addEventListener('adicionar-pedido', handleAdicionarPedido);
+    window.addEventListener("adicionar-pedido", evento);
+
     return () => {
-      window.removeEventListener('adicionar-pedido', handleAdicionarPedido);
+      window.removeEventListener("adicionar-pedido", evento);
     };
   }, []);
 
+  const limparPedido = () => {
+    setItens([]);
+  };
+
   return (
-    <div className="pedido-list">
+    <div className="card">
+      <h2 className="section-title">🛒 Pedido</h2>
+
+      <button className="clear-button" onClick={limparPedido}>
+        Limpar pedido
+      </button>
+
       {itens.length === 0 ? (
-        <p>Nenhum item adicionado ainda.</p>
+        <p className="empty">Nenhum item no pedido</p>
       ) : (
         itens.map((item, index) => (
-          <article key={`${item.id}-${index}`} className="pedido-item">
-            <span>{item.nome}</span>
-          </article>
+          <div className="pedido-item" key={index}>
+            <strong>{item.nome}</strong>
+          </div>
         ))
       )}
     </div>

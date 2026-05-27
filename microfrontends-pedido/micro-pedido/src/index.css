@@ -4,6 +4,20 @@
   color: #111;
 }
 
+.clear-button {
+  border: none;
+  background: #e00;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.clear-button:hover {
+  background: #c00;
+}
+
 .pedido-list {
   min-height: 150px;
   border: 1px dashed #999;
