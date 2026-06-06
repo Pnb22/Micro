@@ -1,0 +1,50 @@
+.cardapio-app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+/* Header */
+.cardapio-header {
+  background: linear-gradient(135deg, #ff6b35 0%, #004e89 100%);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cardapio-header h1 {
+  font-size: 2rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.cardapio-header p {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.95;
+}
+
+/* Main content */
+.cardapio-content {
+  flex: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .cardapio-header {
+    padding: 1.5rem;
+  }
+
+  .cardapio-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .cardapio-content {
+    padding: 1rem;
+  }
+}

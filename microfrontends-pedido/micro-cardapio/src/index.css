@@ -1,43 +1,16 @@
-.cardapio-root {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  color: #111;
-}
-
-.cardapio-list {
-  display: grid;
-  gap: 16px;
-}
-
-.cardapio-item {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.cardapio-item h2 {
-  margin: 0 0 8px;
-  font-size: 1.1rem;
-}
-
-.cardapio-item p {
+* {
   margin: 0;
-  color: #555;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.cardapio-item button {
-  border: none;
-  background: #0070f3;
-  color: white;
-  padding: 10px 14px;
-  border-radius: 8px;
-  cursor: pointer;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
 }
 
-.cardapio-item button:hover {
-  background: #0051b8;
+#root {
+  width: 100%;
+  min-height: 100vh;
 }

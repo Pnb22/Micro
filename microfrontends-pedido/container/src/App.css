@@ -1,0 +1,130 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--background-color);
+}
+
+/* Header Styling */
+.app-header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 2rem;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+}
+
+.header-subtitle {
+  font-size: 1rem;
+  opacity: 0.95;
+  font-weight: 300;
+}
+
+/* Main Content */
+.app-main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 2rem;
+  margin-bottom: 2rem;
+}
+
+.cardapio-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pedido-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+/* Loading State */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  background-color: var(--surface-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  min-height: 200px;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+/* Footer Styling */
+.app-footer {
+  background-color: var(--secondary-color);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+  font-size: 0.9rem;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .app-main {
+    grid-template-columns: 1fr;
+  }
+
+  .pedido-section {
+    position: relative;
+    top: auto;
+  }
+
+  .header-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    padding: 1.5rem;
+  }
+
+  .header-title {
+    font-size: 1.5rem;
+  }
+
+  .app-main {
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    padding: 1rem;
+  }
+
+  .header-title {
+    font-size: 1.3rem;
+  }
+
+  .header-subtitle {
+    font-size: 0.85rem;
+  }
+}

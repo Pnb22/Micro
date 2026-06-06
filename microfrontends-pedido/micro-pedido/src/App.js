@@ -1,12 +1,23 @@
 import React from 'react';
 import Pedido from './components/Pedido';
-import './index.css';
+import './App.css';
 
-export default function App() {
+/**
+ * App - Componente raiz do Micro Pedido
+ * Renderiza o componente principal de pedido/carrinho
+ */
+const App = () => {
   return (
-    <div className="pedido-root">
-      <h1>Micro Pedido</h1>
-      <Pedido />
+    <div className="pedido-app">
+      <header className="pedido-header">
+        <h1>🛒 Seu Pedido</h1>
+        <p>Revise e finalize sua compra</p>
+      </header>
+      <main className="pedido-content">
+        <Pedido />
+      </main>
     </div>
   );
-}
+};
+
+export default App;

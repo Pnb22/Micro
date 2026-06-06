@@ -1,0 +1,473 @@
+/* Pedido Component Styles */
+
+:root {
+  --primary-color: #ff6b35;
+  --secondary-color: #004e89;
+  --accent-color: #f7b801;
+  --border-radius: 12px;
+  --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --danger-color: #e74c3c;
+  --success-color: #27ae60;
+}
+
+.pedido-container {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header do Carrinho */
+.pedido-header-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 2px solid #f0f0f0;
+  background: #fafafa;
+}
+
+.pedido-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.btn-limpar {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-limpar:hover {
+  background: #e63946;
+  transform: scale(1.05);
+}
+
+/* Lista de Itens */
+.pedido-items {
+  flex: 1;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.itens-lista {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Pedido Vazio */
+.pedido-vazio {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  color: #999;
+}
+
+.emoji-vazio {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.mensagem-vazio {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #666;
+}
+
+.submensagem {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #999;
+}
+
+/* Item do Pedido */
+.item-pedido {
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  align-items: center;
+  gap: 1rem;
+  transition: var(--transition);
+}
+
+.item-pedido:hover {
+  background: #f5f5f5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.item-nome {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.item-preco-unitario {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Controle de Quantidade */
+.item-quantidade-controle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0;
+}
+
+.btn-qty-decrement,
+.btn-qty-increment {
+  background: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: var(--transition);
+  color: #666;
+  font-weight: 700;
+}
+
+.btn-qty-decrement:hover,
+.btn-qty-increment:hover {
+  background: #f0f0f0;
+  color: var(--primary-color);
+}
+
+.input-quantidade {
+  width: 40px;
+  text-align: center;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.input-quantidade::-webkit-outer-spin-button,
+.input-quantidade::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Subtotal */
+.item-subtotal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+  text-align: right;
+  min-width: 80px;
+}
+
+.item-subtotal .label {
+  font-size: 0.85rem;
+  color: #999;
+}
+
+.item-subtotal .valor {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--success-color);
+}
+
+/* Botão Remover */
+.btn-remover {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #ffebee;
+  background: #ffebee;
+  color: var(--danger-color);
+  border-radius: 6px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.btn-remover:hover {
+  background: var(--danger-color);
+  color: white;
+  border-color: var(--danger-color);
+}
+
+/* Resumo do Pedido */
+.pedido-resumo {
+  padding: 1.5rem;
+  background: #fafafa;
+  border-top: 2px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.resumo-linha {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.resumo-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-top: 2px solid #e0e0e0;
+  border-bottom: 2px solid #e0e0e0;
+  margin: 0.5rem 0;
+}
+
+.label-total {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.valor-total {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* Botão Finalizar */
+.btn-finalizar {
+  background: linear-gradient(135deg, var(--primary-color), #e55a28);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 0.5rem;
+}
+
+.btn-finalizar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.btn-finalizar:active {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .item-pedido {
+    grid-template-columns: 1fr auto;
+    gap: 0.75rem;
+  }
+
+  .item-info {
+    grid-column: 1;
+  }
+
+  .item-quantidade-controle,
+  .item-subtotal,
+  .btn-remover {
+    grid-column: auto;
+  }
+
+  .pedido-header-card {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .btn-limpar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .pedido-container {
+    border-radius: 8px;
+  }
+
+  .item-pedido {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .item-quantidade-controle {
+    justify-content: space-between;
+  }
+
+  .item-subtotal {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .pedido-resumo {
+    padding: 1rem;
+  }
+}
+
+/* Header do Carrinho */
+.pedido-header-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 2px solid #f0f0f0;
+  background: #fafafa;
+}
+
+.pedido-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.btn-limpar {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-limpar:hover {
+  background: #e63946;
+  transform: scale(1.05);
+}
+
+/* Lista de Itens */
+.pedido-items {
+  flex: 1;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.itens-lista {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Pedido Vazio */
+.pedido-vazio {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  color: #999;
+}
+
+.emoji-vazio {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.mensagem-vazio {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #666;
+}
+
+.submensagem {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #999;
+}
+
+/* Item do Pedido */
+.item-pedido {
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  align-items: center;
+  gap: 1rem;
+  transition: var(--transition);
+}
+
+.item-pedido:hover {
+  background: #f5f5f5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.item-nome {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.item-preco-unitario {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Controle de Quantidade */
+.item-quantidade-controle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0;
+}
+
+.btn-qty-decrement,
+.btn-qty-increment {\n  background: white;\n  border: none;\n  width: 32px;\n  height: 32px;\n  font-size: 1.2rem;\n  cursor: pointer;\n  transition: var(--transition);\n  color: #666;\n  font-weight: 700;\n}\n\n.btn-qty-decrement:hover,\n.btn-qty-increment:hover {\n  background: #f0f0f0;\n  color: var(--primary-color);\n}\n\n.input-quantidade {\n  width: 40px;\n  text-align: center;\n  border: none;\n  font-size: 1rem;\n  font-weight: 600;\n  color: #333;\n}\n\n.input-quantidade::-webkit-outer-spin-button,\n.input-quantidade::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n/* Subtotal */\n.item-subtotal {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-end;\n  gap: 0.25rem;\n  text-align: right;\n  min-width: 80px;\n}\n\n.item-subtotal .label {\n  font-size: 0.85rem;\n  color: #999;\n}\n\n.item-subtotal .valor {\n  font-size: 1.1rem;\n  font-weight: 700;\n  color: var(--success-color);\n}\n\n/* Botão Remover */\n.btn-remover {\n  width: 32px;\n  height: 32px;\n  border: 2px solid #ffebee;\n  background: #ffebee;\n  color: var(--danger-color);\n  border-radius: 6px;\n  font-size: 1.5rem;\n  cursor: pointer;\n  transition: var(--transition);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0;\n}\n\n.btn-remover:hover {\n  background: var(--danger-color);\n  color: white;\n  border-color: var(--danger-color);\n}\n\n/* Resumo do Pedido */\n.pedido-resumo {\n  padding: 1.5rem;\n  background: #fafafa;\n  border-top: 2px solid #f0f0f0;\n  display: flex;\n  flex-direction: column;\n  gap: 0.75rem;\n}\n\n.resumo-linha {\n  display: flex;\n  justify-content: space-between;\n  font-size: 0.95rem;\n  color: #666;\n}\n\n.resumo-total {\n  display: flex;\n  justify-content: space-between;\n  padding: 1rem 0;\n  border-top: 2px solid #e0e0e0;\n  border-bottom: 2px solid #e0e0e0;\n  margin: 0.5rem 0;\n}\n\n.label-total {\n  font-size: 1.1rem;\n  font-weight: 700;\n  color: #333;\n}\n\n.valor-total {\n  font-size: 1.3rem;\n  font-weight: 700;\n  color: var(--primary-color);\n}\n\n/* Botão Finalizar */\n.btn-finalizar {\n  background: linear-gradient(135deg, var(--primary-color), #e55a28);\n  color: white;\n  border: none;\n  padding: 1rem;\n  border-radius: 8px;\n  font-size: 1rem;\n  font-weight: 700;\n  cursor: pointer;\n  transition: var(--transition);\n  margin-top: 0.5rem;\n}\n\n.btn-finalizar:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);\n}\n\n.btn-finalizar:active {\n  transform: translateY(0);\n}\n\n/* Responsive */\n@media (max-width: 768px) {\n  .item-pedido {\n    grid-template-columns: 1fr auto;\n    gap: 0.75rem;\n  }\n\n  .item-info {\n    grid-column: 1;\n  }\n\n  .item-quantidade-controle,\n  .item-subtotal,\n  .btn-remover {\n    grid-column: auto;\n  }\n\n  .pedido-header-card {\n    flex-direction: column;\n    gap: 1rem;\n    align-items: flex-start;\n  }\n\n  .btn-limpar {\n    width: 100%;\n  }\n}\n\n@media (max-width: 480px) {\n  .pedido-container {\n    border-radius: 8px;\n  }\n\n  .item-pedido {\n    grid-template-columns: 1fr;\n    gap: 0.5rem;\n  }\n\n  .item-quantidade-controle {\n    justify-content: space-between;\n  }\n\n  .item-subtotal {\n    align-items: flex-start;\n    text-align: left;\n  }\n\n  .pedido-resumo {\n    padding: 1rem;\n  }\n}\n"

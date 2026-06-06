@@ -1,36 +1,16 @@
-.pedido-root {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  color: #111;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.clear-button {
-  border: none;
-  background: #e00;
-  color: white;
-  padding: 10px 14px;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-bottom: 16px;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
 }
 
-.clear-button:hover {
-  background: #c00;
-}
-
-.pedido-list {
-  min-height: 150px;
-  border: 1px dashed #999;
-  background: #fafafa;
-  padding: 16px;
-  border-radius: 10px;
-}
-
-.pedido-item {
-  padding: 12px;
-  border-bottom: 1px solid #ddd;
-}
-
-.pedido-item:last-child {
-  border-bottom: none;
+#root {
+  width: 100%;
+  min-height: 100vh;
 }

@@ -1,12 +1,23 @@
 import React from 'react';
 import Cardapio from './components/Cardapio';
-import './index.css';
+import './App.css';
 
-export default function App() {
+/**
+ * App - Componente raiz do Micro Cardápio
+ * Renderiza o componente principal de cardápio
+ */
+const App = () => {
   return (
-    <div className="cardapio-root">
-      <h1>Micro Cardápio</h1>
-      <Cardapio />
+    <div className="cardapio-app">
+      <header className="cardapio-header">
+        <h1>🍽️ Cardápio</h1>
+        <p>Escolha seus pratos favoritos</p>
+      </header>
+      <main className="cardapio-content">
+        <Cardapio />
+      </main>
     </div>
   );
-}
+};
+
+export default App;
